@@ -4,7 +4,7 @@ import hudson.plugins.git.GitSCM;
 import hudson.tasks.Shell;
 import javaposse.jobdsl.plugin.*;
 
-def url = "https://github.com/camiloribeiro/cdeasy.git"
+def url = "https://github.com/qualimente/cdeasy-demo.git"
 def jobName = "seed"
 
 project = Jenkins.instance.createProject(FreeStyleProject, jobName)
