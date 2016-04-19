@@ -29,6 +29,7 @@ JobHelper.addDownstreamParameterized(integration_test, [jobNames.sonar_quality_g
 Job sonar_quality_gate = JobHelper.createJob(this as DslFactory, jobNames.sonar_quality_gate)
 JobHelper.addStep(sonar_quality_gate, "sleep \$((RANDOM%10+5))")
 JobHelper.addDeliveryPipelineConfiguration(sonar_quality_gate, 'Build', 'Sonar Code Quality Gate')
+JobHelper.addDownstreamParameterized(deploy_to_stage, [jobNames.deploy_to_stage], "SUCCESS")
 
 Job deploy_to_stage = JobHelper.createJob(this as DslFactory, jobNames.deploy_to_stage)
 JobHelper.addStep(deploy_to_stage, "sleep \$((RANDOM%10+5))")
