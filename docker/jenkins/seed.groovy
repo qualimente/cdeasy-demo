@@ -14,6 +14,7 @@ project.scm = gitScm
 
 project.getBuildersList().clear()
 
+project.getBuildersList().add(new Shell("docker info"));
 project.getBuildersList().add(new Shell("docker run -v \$PWD:/groovy -w /groovy camiloribeiro/gradle:1.10 build"));
 
 project.getBuildersList().add(new ExecuteDslScripts(
